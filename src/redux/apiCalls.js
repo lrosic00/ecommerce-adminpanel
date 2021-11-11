@@ -83,7 +83,7 @@ export const getUsers = async (dispatch, user) => {
 export const updateUser = async (dispatch, user) => {
 	dispatch(updateUsersStart());
 	try {
-		const res = await userRequest.put(`/users/${user._id}`, user);
+		await userRequest.put(`/users/${user._id}`, user);
 
 		dispatch(updateUsersSuccess());
 	} catch (error) {
